@@ -34,11 +34,4 @@ jobs:
           go-version: "1.23.0"
     
       - name: Format codebase
-        id: go-fmt-check
-        run: |
-          OUTPUT=$(go fmt ./...)
-          if [ -n "$OUTPUT" ]; then
-            echo "::error::Go fmt found unformatted files:"
-            echo "$OUTPUT"
-            exit 1
-          fi
+        run: test -z $(go fmt ./...)
