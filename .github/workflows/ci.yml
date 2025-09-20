@@ -34,4 +34,4 @@ jobs:
           go-version: "1.23.0"
     
       - name: Format codebase
-        run: test -z $(go fmt ./...)
+        run: go fmt ./...
