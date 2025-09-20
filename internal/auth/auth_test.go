@@ -16,7 +16,7 @@ func TestGetAPIKey(t *testing.T) {
         want string
     }
 
-    tests := []test{}
+    tests := []test{
         {setHeader: nil, want: ""},
         {setHeader: &headerSet{header: "Authorization", key: "Bearer sometoken"}, want: ""},
         {setHeader: &headerSet{header: "Authorization", key: "ApiKey my-secret-key"}, want: "my-secret-key"},
